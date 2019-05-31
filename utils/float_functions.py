@@ -1,6 +1,6 @@
 #: Scientific Rounding
 
-def s_round(self, places):
+def s_round(self, places=2):
 	"""
 	Correctly round float to n decimal places.
 	>>> s_round(4.055, 2)
