@@ -1,2 +1,4 @@
 language: python
-script: doctest
+script:
+	- python unit_tests.py
+
