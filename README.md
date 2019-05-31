@@ -1,5 +1,12 @@
 # Data Type Tools
 > Includes useful helper methods for Python's immutable data types using the *forbiddenfruit* library.
+## Install
+* `python3 -m pip install datatype-tools`
+## Usage
+* Import single datatype
+	* `from datatype_tools.lib import Float`
+* Import all datatypes
+	* `from datatype_tools.lib import *`
 ## Dict Tools
 * *sort_by_val*
 	 * Sorts dictionary by values, expects dictionary with a depth of 1
