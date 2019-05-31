@@ -1,4 +1,5 @@
 # Data Type Tools
+[![Build Status](https://travis-ci.org/edmundpf/datatype_tools.svg?branch=master)](https://travis-ci.org/edmundpf/datatype_tools)
 > Includes useful helper methods for Python's immutable data types using the *forbiddenfruit* library.
 ## Install
 * `python3 -m pip install datatype-tools`
