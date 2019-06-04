@@ -1,5 +1,5 @@
-from datatype_tools.utils.dict_functions import dict_sort, dict_sort_nested
-from datatype_tools.utils.list_functions import list_sort, list_key_sort, list_nested_sort
+from utils.dict_functions import dict_sort, dict_sort_nested
+from utils.list_functions import list_sort, list_key_sort, list_nested_sort
 
 #::: DICT :::
 

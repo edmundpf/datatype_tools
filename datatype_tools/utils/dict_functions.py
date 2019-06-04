@@ -1,4 +1,4 @@
-from datatype_tools.utils.string_functions import format_date
+from utils.string_functions import format_date
 
 #: Get Nested Keys
 
