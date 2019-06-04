@@ -1,4 +1,4 @@
-from  datatype_tools.utils.string_functions import format_date
+from datatype_tools.utils.string_functions import format_date
 from datatype_tools.utils.dict_functions import get_nested_keys, get_nested_tuple
 
 #: Dict to Tuple
