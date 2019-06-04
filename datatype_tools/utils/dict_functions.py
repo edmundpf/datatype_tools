@@ -1,4 +1,4 @@
-from utils.string_functions import format_date
+from datatype_tools.utils.string_functions import format_date
 
 #: Get Nested Keys
 
@@ -53,7 +53,7 @@ def get_nested_tuple(elem, arr, mod=1):
 
 def dict_sort(obj, mod=1, asc=True, sort_type='string', date_input='mdy'):
 	"""
-	Expects dict object, mod 0 or 1 for keys or values, asc for ascending or descending, sort_type in ['string', 'int', 'float', 'date'], 
+	Expects dict object, mod 0 or 1 for keys or values, asc for ascending or descending, sort_type in ['string', 'int', 'float', 'date'],
 	and date_input for date input format.
 	>>> dict_sort({ 'b': 'c', 'a': 'd' }, mod=1, asc=True, sort_type='string')
 	{'b': 'c', 'a': 'd'}
@@ -95,9 +95,9 @@ def dict_sort(obj, mod=1, asc=True, sort_type='string', date_input='mdy'):
 	elif sort_type == 'float':
 		return {k: v for k, v in sorted(obj.items(), key=lambda x: float(x[mod]), reverse=not asc)}
 	elif sort_type == 'date':
-		return {k: v for k, v in sorted(obj.items(), 
-					key=lambda x: int(format_date(x[mod], 
-					date_input=date_input, date_format='yyyymmdd')), 
+		return {k: v for k, v in sorted(obj.items(),
+					key=lambda x: int(format_date(x[mod],
+					date_input=date_input, date_format='yyyymmdd')),
 					reverse=not asc)}
 
 #: Sort Nested Dict
@@ -108,12 +108,12 @@ def dict_sort_nested(obj, nested_args, mod=1, asc=True):
 	nested_args expects a list of dict, i.e. [{ 'keys': ['b', 'c'], 'sort_type': 'date', 'date_input': 'mdy'}]
 	keys indicates the nested keys respectively to sort by, sort_type in ['string', 'int', 'float', 'date'],
 	and date_input for date input format.
-	Multiple dicts can be added to sort by multiple nested keys respectively. 
+	Multiple dicts can be added to sort by multiple nested keys respectively.
 	Also expects mod 0 or 1 for keys or values, asc for ascending or descending.
 	>>> dict_sort_nested({ 'a': { 'b': { 'c': 2 }, 'd': 1 }, 'b': { 'b': { 'c': 1 }, 'd': 3  }, 'c': { 'b': { 'c': 1 }, 'd': 2 } }, nested_args=[{'keys': ['b', 'c'], 'sort_type': 'int'}, {'keys': ['d'], 'sort_type': 'int'}], asc=True)
 	{'c': {'b': {'c': 1}, 'd': 2}, 'b': {'b': {'c': 1}, 'd': 3}, 'a': {'b': {'c': 2}, 'd': 1}}
 	"""
 	return {k: v for k, v in sorted(obj.items(), key=lambda x: get_nested_tuple(
 				elem=x, arr=nested_args, mod=mod), reverse=not asc)}
-	
+
 #::: END PROGRAM :::

@@ -1,5 +1,5 @@
 from forbiddenfruit import curse
-from utils.float_functions import s_round
+from datatype_tools.utils.float_functions import s_round
 
 #: Float Curses
 

@@ -1,6 +1,6 @@
 from forbiddenfruit import curse
-from utils.type_functions import (list_sort_by_val, 
-	list_sort_by_key, list_sort_by_key_val, 
+from datatype_tools.utils.type_functions import (list_sort_by_val,
+	list_sort_by_key, list_sort_by_key_val,
 	list_nested_sort_by_val)
 
 #: List Curses

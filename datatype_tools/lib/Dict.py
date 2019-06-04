@@ -1,5 +1,5 @@
 from forbiddenfruit import curse
-from utils.type_functions import (dict_sort_by_val, 
+from datatype_tools.utils.type_functions import (dict_sort_by_val,
 	dict_sort_by_key, dict_nested_sort_by_val)
 
 #: Dict Curses

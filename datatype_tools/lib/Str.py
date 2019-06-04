@@ -1,5 +1,5 @@
 from forbiddenfruit import curse
-from utils.string_functions import (replace_multiple, 
+from datatype_tools.utils.string_functions import (replace_multiple,
 	format_date, find_nth)
 
 #: String Curses
