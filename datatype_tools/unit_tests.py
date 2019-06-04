@@ -1,1 +1,1 @@
-from datatype_tools.utils import function_tests
+from utils import function_tests

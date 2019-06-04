@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
 	name="datatype-tools",
-	version="0.0.5",
+	version="0.0.6",
 	author="Edmund Pfeil",
 	author_email="edmundpf@buffalo.edu",
 	description="Additional methods for Python's immutable data types.",
