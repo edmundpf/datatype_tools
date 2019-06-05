@@ -1,5 +1,6 @@
 # Data Type Tools
 [![Build Status](https://travis-ci.org/edmundpf/datatype_tools.svg?branch=master)](https://travis-ci.org/edmundpf/datatype_tools)
+[![PyPI version](https://badge.fury.io/py/datatype-tools.svg)](https://badge.fury.io/py/datatype-tools)
 > Includes useful helper methods for Python's immutable data types using the *forbiddenfruit* library.
 ## Install
 * `python3 -m pip install datatype-tools`
@@ -200,6 +201,24 @@
 		* *n*: int
 			* 1-based occurence number of substring to find in string.
 	* Returns int index
+* *b64_enc*
+	* Base64 encode string
+	```
+	>>> 'plain_text'.b64_enc()
+	'cGxhaW5fdGV4dA=='
+	```
+	* Arguments
+		* *self*: string
+	* Returns string
+* *b64_dec*
+	* Base64 decode string
+	```
+	>>> 'cGxhaW5fdGV4dA=='.b64_dec()
+	'plain_text'
+	```
+	* Arguments
+		* *self*: string
+	* Returns string
 ## Float Tools
 * *round*
 	* Round value to n decimal places (scientific rounding, fixes python rounding errors)

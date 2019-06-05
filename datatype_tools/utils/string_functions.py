@@ -1,4 +1,5 @@
 import sys
+from base64 import b64encode, b64decode
 
 #: Replace Multiple Values
 
@@ -42,7 +43,7 @@ def format_date(self, date_input='mdy', date_format='mmddyy', delimiter=''):
 		elif len(date) == 6:
 			year = date[:2]
 			month = date[2:4]
-			day = date[4:]	
+			day = date[4:]
 	if len(year) == 2:
 		if int(year) >= 70:
 			year = '19' + year
@@ -90,5 +91,25 @@ def find_nth(self, string, n):
 	else:
 		repl = chr(sys.maxunicode - 1)
 	return self.replace(string, repl, n - 1).find(string)
+
+#: Base64 Encode String
+
+def b64_encode(self):
+	"""
+	Expects string, returns Base64-Encoded string
+	>>> b64_encode('plain_text')
+	'cGxhaW5fdGV4dA=='
+	"""
+	return b64encode(self.encode()).decode('utf-8')
+
+#: Base64 Decode String
+
+def b64_decode(self):
+	"""
+	Expects string, returns Base64-Decoded string
+	>>> b64_decode('cGxhaW5fdGV4dA==')
+	'plain_text'
+	"""
+	return b64decode(self.encode()).decode('utf-8')
 
 #::: END PROGRAM :::
