@@ -1,4 +1,5 @@
 import sys
+from datetime import datetime
 from base64 import b64encode, b64decode
 
 #: Replace Multiple Values
@@ -111,5 +112,25 @@ def b64_decode(self):
 	'plain_text'
 	"""
 	return b64decode(self.encode()).decode('utf-8')
+
+#: Get Date and Time from ISO Date
+
+def get_iso_date(self, iso_format='%Y-%m-%dT%H:%M:%S.%fZ', date_format='mmddyyyy', delimiter='/'):
+	"""
+	Expects string, returns dict of date info
+	>>> get_iso_date('2019-05-27T19:09:04.285211Z')
+	{'date': '05/27/2019', 'time': '19:09:04', 'micros': '285211', 'date_and_time': '05/27/2019-19:09:04', 'full_date': '05/27/2019-19:09:04.285211'}
+	"""
+	date_obj = datetime.strptime(self, iso_format)
+	date = format_date(date_obj.strftime('%m%d%Y'), date_format=date_format, delimiter=delimiter)
+	time = date_obj.strftime('%H:%M:%S')
+	micros = date_obj.strftime('%f')
+	return {
+		'date': date,
+		'time': time,
+		'micros': micros,
+		'date_and_time': f'{date}-{time}',
+		'full_date': f'{date}-{time}.{micros}'
+	}
 
 #::: END PROGRAM :::
