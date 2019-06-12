@@ -203,7 +203,7 @@
 	* Returns int index
 * *b64_enc*
 	* Base64 encode string
-	```
+	``` python
 	>>> 'plain_text'.b64_enc()
 	'cGxhaW5fdGV4dA=='
 	```
@@ -212,13 +212,25 @@
 	* Returns string
 * *b64_dec*
 	* Base64 decode string
-	```
+	``` python
 	>>> 'cGxhaW5fdGV4dA=='.b64_dec()
 	'plain_text'
 	```
 	* Arguments
 		* *self*: string
 	* Returns string
+* *get_iso_date*
+	* Get ISO Date from string
+	``` python
+	>>> '2019-05-27T19:09:04.285211Z'.get_iso_date()
+	{'date': '05/27/2019', 'time': '19:09:04', 'micros': '285211', 'date_and_time': '05/27/2019-19:09:04', 'full_date': '05/27/2019-19:09:04.285211'}
+	```
+	* Arguments
+		* *self*: string
+		* iso_format: string, ISO datetime format for strftime
+		* date_format: string, date output format
+		* delimiter: string, date output delimiter
+	* Returns dict
 ## Float Tools
 * *round*
 	* Round value to n decimal places (scientific rounding, fixes python rounding errors)
